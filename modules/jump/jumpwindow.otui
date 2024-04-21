@@ -1,4 +1,4 @@
-QuestLabel < Label
+JumpLabel < Label
   font: verdana-11px-monochrome
   text-offset: 2 0
   focusable: true
@@ -18,9 +18,9 @@ QuestLabel < Label
   $!on focus:
     color: #ffffff
 
-QuestLogWindow < MainWindow
-  id: questLogWindow
-  !text: tr('Quest Log')
+JumpWindow < MainWindow
+  id: jumpWindow
+  !text: tr('Jump')
   size: 500 400
   @onEscape: self:destroy()
 

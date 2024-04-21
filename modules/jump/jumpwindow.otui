@@ -24,24 +24,12 @@ JumpWindow < MainWindow
   size: 500 400
   @onEscape: self:destroy()
 
-  TextList
-    id: questList
-    anchors.top: parent.top
-    anchors.bottom: closeButton.top
-    anchors.left: parent.left
-    anchors.right: questListScrollBar.left
-    margin-bottom: 10
-    focusable: false
-    vertical-scrollbar: questListScrollBar
-
-  VerticalScrollBar
-    id: questListScrollBar
-    anchors.top: parent.top
-    anchors.bottom: closeButton.top
-    anchors.right: parent.right
-    margin-bottom: 10
-    step: 14
-    pixels-scroll: true
+  Button
+    id: jumpButton
+    anchors.centerIn: parent
+    !text: tr('Jump!')
+    width: 90
+    @onClick: self:destroy()
 
   Button
     id: closeButton

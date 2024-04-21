@@ -25,11 +25,10 @@ JumpWindow < MainWindow
   @onEscape: self:destroy()
 
   Button
-    id: jumpButton
+    id: interactButton
     anchors.centerIn: parent
     !text: tr('Jump!')
     width: 90
-    @onClick: self:destroy()
 
   Button
     id: closeButton

@@ -1,4 +1,5 @@
 jumpButton = nil
+interactButton = nil
 
 function init()
   g_ui.importStyle('jumpwindow')
@@ -22,6 +23,13 @@ function onGameJump()
   destroyWindows()
 
   jumpWindow = g_ui.createWidget('JumpWindow', rootWidget)
+  interactButton = jumpWindow:recursiveGetChildById('interactButton')
+
+  -- Set onClick function to destroy the button
+  interactButton.onClick = function()
+    interactButton:destroy()
+    interactButton = nil
+  end
 
   jumpWindow.onDestroy = function()
     jumpWindow = nil

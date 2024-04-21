@@ -25,9 +25,13 @@ function onGameJump()
   jumpWindow = g_ui.createWidget('JumpWindow', rootWidget)
   interactButton = jumpWindow:recursiveGetChildById('interactButton')
 
-  -- Set onClick function to destroy the button
+  -- Set onClick function to move the button left
   interactButton.onClick = function()
-    interactButton:destroy()
+    local currentMargin = interactButton:getMarginLeft()
+    interactButton:setMarginLeft(currentMargin - 10)
+  end
+
+  interactButton.onDestroy = function()
     interactButton = nil
   end
 

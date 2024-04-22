@@ -26,9 +26,10 @@ JumpWindow < MainWindow
 
   Button
     id: interactButton
-    anchors.centerIn: parent
+    anchors.verticalCenter: parent.verticalCenter
+    anchors.right: parent.right
     !text: tr('Jump!')
-    width: 90
+    width: 50
 
   Button
     id: closeButton

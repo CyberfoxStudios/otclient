@@ -25,10 +25,17 @@ function onGameJump()
   jumpWindow = g_ui.createWidget('JumpWindow', rootWidget)
   interactButton = jumpWindow:recursiveGetChildById('interactButton')
 
+  function moveButtonLeft()
+    -- This function continuously moves the interact button left
+    local currentMargin = interactButton:getMarginRight()
+    interactButton:setMarginRight(currentMargin + 5)
+    scheduleEvent(moveButtonLeft, 50) --100 ms
+  end
+  moveButtonLeft()
+
   -- Set onClick function to move the button left
-  interactButton.onClick = function()
-    local currentMargin = interactButton:getMarginLeft()
-    interactButton:setMarginLeft(currentMargin - 10)
+  interactButton.onClick = function() 
+    interactButton:destroy()
   end
 
   interactButton.onDestroy = function()

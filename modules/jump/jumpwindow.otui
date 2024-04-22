@@ -20,8 +20,8 @@ JumpLabel < Label
 
 JumpWindow < MainWindow
   id: jumpWindow
-  !text: tr('Jump')
-  size: 500 400
+  !text: tr('')
+  size: 250 250
   @onEscape: self:destroy()
 
   Button

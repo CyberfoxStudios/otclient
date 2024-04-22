@@ -30,11 +30,3 @@ JumpWindow < MainWindow
     anchors.right: parent.right
     !text: tr('Jump!')
     width: 50
-
-  Button
-    id: closeButton
-    anchors.bottom: parent.bottom
-    anchors.right: parent.right
-    !text: tr('Close')
-    width: 90
-    @onClick: self:getParent():destroy()

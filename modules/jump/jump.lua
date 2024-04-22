@@ -35,9 +35,13 @@ function onGameJump()
   end
   moveButtonLeft()
 
-  -- Set onClick function to move the button left
   interactButton.onClick = function()
-    interactButton:setMarginTop(interactButton:getParent():getHeight() / 10) 
+    -- resets button position onClick
+    -- randomize height. lower is wider range
+    local divFactor = 4 * math.random(-1, 1)
+    local newHeight = interactButton:getParent():getHeight() / divFactor
+    interactButton:setMarginTop(newHeight)
+
     interactButton:setMarginRight(0)
   end
 

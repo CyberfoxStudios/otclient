@@ -1,0 +1,9 @@
+Module
+  name: redplayer
+  description: Color player outfit red when ctrl + arrow
+  author: J.T. Mints
+  website: https://github.com/CyberfoxStudios/otclient
+  sandboxed: true
+  scripts: [ redplayer ]
+  @onLoad: init()
+  @onUnload: terminate()

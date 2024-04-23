@@ -1,16 +1,40 @@
+-- redplayer will color the player red
+-- when holding ctrl + arrow key
+
+-- start and end functions
 function init()
-  g_keyboard.bindKeyDown('R', redPlayer)
-  g_keyboard.bindKeyUp('R', whitePlayer)
+  bindArrowKeys(redPlayer, whitePlayer)
 end
 
 function terminate()
-  --undo bindings
-  g_keyboard.unbindKeyDown('R')
-  g_keyboard.unbindKeyUp('R')
+  unbindArrowKeys()
 end
 
+-- keybind functions
+function bindArrowKeys(downFunc, upFunc)
+  g_keyboard.bindKeyDown('Ctrl+Up', downFunc)
+  g_keyboard.bindKeyUp('Ctrl+Up', upFunc)
+  g_keyboard.bindKeyDown('Ctrl+Down', downFunc)
+  g_keyboard.bindKeyUp('Ctrl+Down', upFunc)
+  g_keyboard.bindKeyDown('Ctrl+Left', downFunc)
+  g_keyboard.bindKeyUp('Ctrl+Left', upFunc)
+  g_keyboard.bindKeyDown('Ctrl+Right', downFunc)
+  g_keyboard.bindKeyUp('Ctrl+Right', upFunc)
+end
+
+function unbindArrowKeys()
+  g_keyboard.unbindKeyDown('Ctrl+Up')
+  g_keyboard.unbindKeyUp('Ctrl+Up')
+  g_keyboard.unbindKeyDown('Ctrl+Down')
+  g_keyboard.unbindKeyUp('Ctrl+Down')
+  g_keyboard.unbindKeyDown('Ctrl+Left')
+  g_keyboard.unbindKeyUp('Ctrl+Left')
+  g_keyboard.unbindKeyDown('Ctrl+Right')
+  g_keyboard.unbindKeyUp('Ctrl+Right')
+end
+
+-- change player color functions
 function redPlayer()
-  -- changes player color
   local player = g_game.getLocalPlayer()
   if player then
     player:setOutfitColor('#f55e5e', 0) -- red
@@ -18,7 +42,6 @@ function redPlayer()
 end
 
 function whitePlayer()
-  -- changes player color
   local player = g_game.getLocalPlayer()
   if player then
     player:setOutfitColor('#ffffff', 0) -- red

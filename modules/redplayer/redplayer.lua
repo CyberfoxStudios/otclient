@@ -44,6 +44,6 @@ end
 function whitePlayer()
   local player = g_game.getLocalPlayer()
   if player then
-    player:setOutfitColor('#ffffff', 0) -- red
+    player:setOutfitColor('#ffffff', 0) -- white
   end
 end

@@ -1,0 +1,9 @@
+Module
+  name: jump
+  description: Play Jump! Minigame
+  author: J.T. Mints
+  website: https://github.com/CyberfoxStudios/otclient
+  sandboxed: true
+  scripts: [ jump ]
+  @onLoad: init()
+  @onUnload: terminate()
